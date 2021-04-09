@@ -1,6 +1,9 @@
 import React from "react";
 import home1 from "../img/home1.png";
 
+//import Framer Motion
+import { motion } from "framer-motion";
+
 //Styled
 import styled from "styled-components";
 
