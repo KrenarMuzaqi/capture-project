@@ -82,6 +82,11 @@ const Awards = styled.div`
   display: flex;
   margin: 5rem 10rem;
   justify-content: space-around;
+
+  @media (max-width: 1300px) {
+    display: block;
+    margin: 2rem;
+  }
 `;
 
 const AwardStyle = styled.div`
@@ -121,6 +126,10 @@ const ImageDisplay = styled.div`
     width: 100%;
     height: 90vh;
     object-fit: cover;
+
+    @media (max-width: 500px) {
+      height: auto;
+    }
   }
 `;
 
