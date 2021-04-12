@@ -10,32 +10,38 @@ import goodtimes from "../img/goodtimes-small.png";
 
 //Animations
 import { motion } from "framer-motion";
-import { pageAnimation } from "../animation";
+import { pageAnimation, photoAnim, fade } from "../animation";
 
 const OurWrok = () => {
   return (
     <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
       <Movie>
-        <h2>The Athlete</h2>
+        <motion.h2 variants={fade}>The Athlete</motion.h2>
         <div className="line"> </div>
         <Link to="/work/the-athlete">
-          <img src={athlete} alt="athlete" />
+          <Hide>
+            <motion.img variants={photoAnim} src={athlete} alt="athlete" />
+          </Hide>
         </Link>
       </Movie>
 
       <Movie>
-        <h2>The Racer</h2>
-        <div className="line"> </div>
+        <motion.h2 variants={fade}>The Racer</motion.h2>
+        <motion.div className="line"> </motion.div>
         <Link to="/work/the-racer">
-          <img src={theracer} alt="theracer" />
+          <Hide>
+            <motion.img variants={photoAnim} src={theracer} alt="theracer" />
+          </Hide>
         </Link>
       </Movie>
 
       <Movie>
-        <h2>Good Times</h2>
+        <motion.h2 variants={fade}>Good Times</motion.h2>
         <div className="line"> </div>
         <Link to="/work/good-times">
-          <img src={goodtimes} alt="goodtimes" />
+          <Hide>
+            <motion.img variants={photoAnim} src={goodtimes} alt="goodtimes" />
+          </Hide>
         </Link>
       </Movie>
     </Work>
@@ -46,7 +52,7 @@ const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 10rem;
-
+  background-color: #fff;
   h2 {
     padding: 1rem 0rem;
   }
@@ -56,8 +62,8 @@ const Movie = styled.div`
   padding-bottom: 10rem;
 
   .line {
-    line-height: 0.5rem;
-    background-color: #ccc;
+    height: 0.5rem;
+    background-color: #23d997;
     margin-bottom: 3rem;
   }
 
@@ -66,6 +72,10 @@ const Movie = styled.div`
     height: 70vh;
     object-fit: cover;
   }
+`;
+
+const Hide = styled.div`
+  overflow: hidden;
 `;
 
 export default OurWrok;
