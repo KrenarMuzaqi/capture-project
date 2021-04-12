@@ -37,6 +37,8 @@ const AboutSection = () => {
         </motion.p>
         <motion.button variants={fade}>Contact Us</motion.button>
       </Description>
+
+      {/*IF we want to show images first (out of staggerChildren) we can add ~ initial="hidden" animate="show" (then doesn't wait for staggering)*/}
       <Image>
         <motion.img variants={photoAnim} src={home1} alt="guy with a camera" />
       </Image>

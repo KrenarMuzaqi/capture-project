@@ -10,14 +10,28 @@ import goodtimes from "../img/goodtimes-small.png";
 
 //Animations
 import { motion } from "framer-motion";
-import { pageAnimation, photoAnim, fade } from "../animation";
+import {
+  pageAnimation,
+  photoAnim,
+  fade,
+  lineAnim,
+  sliderContainer,
+  slider,
+} from "../animation";
 
 const OurWrok = () => {
   return (
     <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+      <motion.div variants={sliderContainer}>
+        <Frame1 variants={slider}></Frame1>
+        <Frame2 variants={slider}></Frame2>
+        <Frame3 variants={slider}></Frame3>
+        <Frame4 variants={slider}></Frame4>
+      </motion.div>
+
       <Movie>
         <motion.h2 variants={fade}>The Athlete</motion.h2>
-        <div className="line"> </div>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-athlete">
           <Hide>
             <motion.img variants={photoAnim} src={athlete} alt="athlete" />
@@ -27,7 +41,7 @@ const OurWrok = () => {
 
       <Movie>
         <motion.h2 variants={fade}>The Racer</motion.h2>
-        <motion.div className="line"> </motion.div>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-racer">
           <Hide>
             <motion.img variants={photoAnim} src={theracer} alt="theracer" />
@@ -37,7 +51,7 @@ const OurWrok = () => {
 
       <Movie>
         <motion.h2 variants={fade}>Good Times</motion.h2>
-        <div className="line"> </div>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/good-times">
           <Hide>
             <motion.img variants={photoAnim} src={goodtimes} alt="goodtimes" />
@@ -76,6 +90,29 @@ const Movie = styled.div`
 
 const Hide = styled.div`
   overflow: hidden;
+`;
+
+const Frame1 = styled(motion.div)`
+  position: fixed;
+  left: 0;
+  top: 10%;
+  width: 100%;
+  height: 100vh;
+  background-color: #fffebf;
+  z-index: 2;
+`;
+
+// "styled(Frame1)" copys all property (css) from Frame1
+const Frame2 = styled(Frame1)`
+  background-color: #ff8efb;
+`;
+
+const Frame3 = styled(Frame1)`
+  background-color: #8ed2ff;
+`;
+
+const Frame4 = styled(Frame1)`
+  background-color: #8effa0;
 `;
 
 export default OurWrok;
