@@ -19,7 +19,11 @@ import {
   slider,
 } from "../animation";
 
+import { useScroll } from "../components/useScroll";
+
 const OurWrok = () => {
+  const [element, controls] = useScroll();
+  const [element2, controls2] = useScroll();
   return (
     <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
       <motion.div variants={sliderContainer}>
@@ -39,22 +43,27 @@ const OurWrok = () => {
         </Link>
       </Movie>
 
-      <Movie>
-        <motion.h2 variants={fade}>The Racer</motion.h2>
+      <Movie variants={fade} animate={controls} ref={element} initial="hidden">
+        <h2>The Racer</h2>
         <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-racer">
           <Hide>
-            <motion.img variants={photoAnim} src={theracer} alt="theracer" />
+            <img variants={photoAnim} src={theracer} alt="theracer" />
           </Hide>
         </Link>
       </Movie>
 
-      <Movie>
-        <motion.h2 variants={fade}>Good Times</motion.h2>
-        <motion.div variants={lineAnim} className="line"></motion.div>
+      <Movie
+        variants={fade}
+        animate={controls2}
+        ref={element2}
+        initial="hidden"
+      >
+        <h2>Good Times</h2>
+        <div className="line"></div>
         <Link to="/work/good-times">
           <Hide>
-            <motion.img variants={photoAnim} src={goodtimes} alt="goodtimes" />
+            <img src={goodtimes} alt="goodtimes" />
           </Hide>
         </Link>
       </Movie>
@@ -72,7 +81,7 @@ const Work = styled(motion.div)`
   }
 `;
 
-const Movie = styled.div`
+const Movie = styled(motion.div)`
   padding-bottom: 10rem;
 
   .line {
