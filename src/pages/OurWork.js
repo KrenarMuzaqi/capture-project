@@ -62,7 +62,7 @@ const OurWrok = () => {
         initial="hidden"
       >
         <h2>Good Times</h2>
-        <div className="line"></div>
+        <motion.div className="line" variants={lineAnim}></motion.div>
         <Link to="/work/good-times">
           <Hide>
             <img src={goodtimes} alt="goodtimes" />
@@ -80,6 +80,10 @@ const Work = styled(motion.div)`
   background-color: #fff;
   h2 {
     padding: 1rem 0rem;
+  }
+
+  @media (max-width: 1300px) {
+    padding: 2rem;
   }
 `;
 

@@ -7,7 +7,7 @@ export const useScroll = () => {
   const controls = useAnimation();
 
   //threshold: 0.5 - is when half of section is showed
-  const [element, view] = useInView({ threshold: 0.5 });
+  const [element, view] = useInView({ threshold: 0.3 });
 
   if (view) {
     controls.start("show");
