@@ -21,6 +21,8 @@ import {
 
 import { useScroll } from "../components/useScroll";
 
+import ScrollTop from "../components/ScrollTop";
+
 const OurWrok = () => {
   const [element, controls] = useScroll();
   const [element2, controls2] = useScroll();
@@ -32,7 +34,7 @@ const OurWrok = () => {
         <Frame3 variants={slider}></Frame3>
         <Frame4 variants={slider}></Frame4>
       </motion.div>
-
+      <ScrollTop />
       <Movie>
         <motion.h2 variants={fade}>The Athlete</motion.h2>
         <motion.div variants={lineAnim} className="line"></motion.div>
