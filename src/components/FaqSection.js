@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 import styled from "styled-components";
 
+import { AnimateSharedLayout } from "framer-motion";
+
 import { About } from "../styles";
+
+import Toggle from "./Toggle";
 
 const FaqSection = () => {
   return (
@@ -10,55 +14,48 @@ const FaqSection = () => {
       <h2>
         Any Questions <span>FAQ</span>
       </h2>
+      <AnimateSharedLayout>
+        <Toggle title="How do I Start?">
+          <div className="question">
+            <div className="answer">
+              <p>Lorem ipsum, dolor sit amet </p>
+              <p>
+                Lorem ipsum, dolor sit amet censectetur adipisicing
+                Necessitatibus, newue.
+              </p>
+            </div>
+          </div>
+        </Toggle>
 
-      <div className="question">
-        <h4>How do I Start?</h4>
+        <Toggle title="Daily Schedule">
+          <div className="answer">
+            <p>Lorem ipsum, dolor sit amet </p>
+            <p>
+              Lorem ipsum, dolor sit amet censectetur adipisicing
+              Necessitatibus, newue.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="Different Payment Methods">
+          <div className="answer">
+            <p>Lorem ipsum, dolor sit amet </p>
+            <p>
+              Lorem ipsum, dolor sit amet censectetur adipisicing
+              Necessitatibus, newue.
+            </p>
+          </div>
+        </Toggle>
 
-        <div className="answer">
-          <p>Lorem ipsum, dolor sit amet </p>
-          <p>
-            Lorem ipsum, dolor sit amet censectetur adipisicing Necessitatibus,
-            newue.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>Daily Schedule</h4>
-
-        <div className="answer">
-          <p>Lorem ipsum, dolor sit amet </p>
-          <p>
-            Lorem ipsum, dolor sit amet censectetur adipisicing Necessitatibus,
-            newue.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>Different Payment Methods</h4>
-
-        <div className="answer">
-          <p>Lorem ipsum, dolor sit amet </p>
-          <p>
-            Lorem ipsum, dolor sit amet censectetur adipisicing Necessitatibus,
-            newue.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>What products do you offer?</h4>
-
-        <div className="answer">
-          <p>Lorem ipsum, dolor sit amet </p>
-          <p>
-            Lorem ipsum, dolor sit amet censectetur adipisicing Necessitatibus,
-            newue.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
+        <Toggle title="What products do you offer?">
+          <div className="answer">
+            <p>Lorem ipsum, dolor sit amet </p>
+            <p>
+              Lorem ipsum, dolor sit amet censectetur adipisicing
+              Necessitatibus, newue.
+            </p>
+          </div>
+        </Toggle>
+      </AnimateSharedLayout>
     </Faq>
   );
 };
